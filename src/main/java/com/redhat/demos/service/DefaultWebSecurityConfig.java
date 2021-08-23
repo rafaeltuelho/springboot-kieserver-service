@@ -10,8 +10,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -38,6 +38,7 @@ public class DefaultWebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("jack").password("jack").roles("user");
         auth.inMemoryAuthentication().withUser("user").password("user").roles("kie-server");
         auth.inMemoryAuthentication().withUser("wbadmin").password("wbadmin").roles("admin");
+        auth.inMemoryAuthentication().withUser("dmAdmin").password("S3cr3tK3y!").roles("admin");
         auth.inMemoryAuthentication().withUser("kieserver").password("kieserver1!").roles("kie-server");
     }
 
